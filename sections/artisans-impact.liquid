@@ -1,0 +1,224 @@
+{{ 'section-artisans-impact.css' | asset_url | stylesheet_tag }}
+
+<section id="artisans-impact" class="artisans-impact" style="background-color: {{ section.settings.bg_color }};">
+  <div class="page-width">
+    <!-- Section Header -->
+    <div class="artisans-impact__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="artisans-impact__eyebrow">{{ section.settings.eyebrow }}</span>
+      {%- endif -%}
+      <h2 class="artisans-impact__title font-serif">
+        {{ section.settings.title }}
+      </h2>
+      {%- if section.settings.subtitle != blank -%}
+        <p class="artisans-impact__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <!-- 3 Impact Pillars -->
+    <div class="artisans-impact__stats">
+      <div class="impact-stat-card">
+        <div class="impact-stat-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+          </svg>
+        </div>
+        <div class="impact-stat-card__number">100%</div>
+        <div class="impact-stat-card__label">Living Wages Guaranteed</div>
+        <p class="impact-stat-card__desc">Artisans are paid 2x to 3x regional market rates upfront, guaranteeing true economic security.</p>
+      </div>
+
+      <div class="impact-stat-card">
+        <div class="impact-stat-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="impact-stat-card__number">120+</div>
+        <div class="impact-stat-card__label">Youth Scholarships Funded</div>
+        <p class="impact-stat-card__desc">Every piece directly funds community schools, books, and high school scholarships in Sololá.</p>
+      </div>
+
+      <div class="impact-stat-card">
+        <div class="impact-stat-card__icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="impact-stat-card__number">501(c)(3)</div>
+        <div class="impact-stat-card__label">Official Non-Profit Mission</div>
+        <p class="impact-stat-card__desc">Friends of Sharing the Dream in Guatemala has empowered Maya communities since 1996.</p>
+      </div>
+    </div>
+
+    <!-- Artisan Cards Grid -->
+    <div class="artisans-impact__grid">
+      {%- for block in section.blocks -%}
+        <div class="artisan-card" {{ block.shopify_attributes }}>
+          <div class="artisan-card__top">
+            <a href="{{ block.settings.story_link }}" target="_blank" rel="noreferrer" class="artisan-card__image-link">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 800 | image_tag: class: 'artisan-card__image' }}
+              {%- else -%}
+                <img 
+                  src="{{ 'artisan-team.jpg' | asset_url }}" 
+                  alt="{{ block.settings.name }}" 
+                  class="artisan-card__image"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                >
+              {%- endif -%}
+              <span class="artisan-card__technique-badge">
+                {{ block.settings.technique }}
+              </span>
+            </a>
+
+            <div class="artisan-card__body">
+              <div class="artisan-card__location">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#962d3e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>{{ block.settings.location }}</span>
+              </div>
+              <h3 class="artisan-card__name font-serif">
+                <a href="{{ block.settings.story_link }}" target="_blank" rel="noreferrer">
+                  {{ block.settings.name }}
+                </a>
+              </h3>
+              <p class="artisan-card__bio">
+                "{{ block.settings.bio }}"
+              </p>
+            </div>
+          </div>
+
+          <div class="artisan-card__footer">
+            <span class="artisan-card__badge-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+              </svg>
+              Master Artisan
+            </span>
+            <a href="{{ block.settings.story_link }}" target="_blank" rel="noreferrer" class="artisan-card__story-btn">
+              Read Story &rarr;
+            </a>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Artisans & Impact",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de Fondo",
+      "default": "#fcf9f5"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Subtítulo superior",
+      "default": "VERIFIED FAIR TRADE IMPACT"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título Principal",
+      "default": "Meet the Hands Behind the Weaving"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Descripción de la sección",
+      "default": "Every thread woven and every bead strung carries the identity, pride, and generational knowledge of indigenous Maya women."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "artisan",
+      "name": "Perfil de Artesana",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Foto de la Artesana"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nombre de la Artesana",
+          "default": "Elena Quiej"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Comunidad / Región",
+          "default": "San Juan La Laguna, Sololá"
+        },
+        {
+          "type": "text",
+          "id": "technique",
+          "label": "Técnica Artesanal",
+          "default": "Botanical Dye & Backstrap Loom"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "Biografía o Testimonio",
+          "default": "Elena is a master of plant-based natural dyes, weaving organic cotton threads on a traditional backstrap loom passed down through five generations."
+        },
+        {
+          "type": "url",
+          "id": "story_link",
+          "label": "Enlace a la Historia",
+          "default": "https://sharingthedream2.netlify.app/"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Artisans & Impact",
+      "blocks": [
+        {
+          "type": "artisan",
+          "settings": {
+            "name": "Elena Quiej",
+            "location": "San Juan La Laguna, Sololá",
+            "technique": "Botanical Dye & Backstrap Loom",
+            "bio": "Elena is a master of plant-based natural dyes, weaving organic cotton threads on a traditional backstrap loom passed down through five generations.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        },
+        {
+          "type": "artisan",
+          "settings": {
+            "name": "María Xuncax",
+            "location": "Santiago Atitlán, Sololá",
+            "technique": "Traditional Hand Embroidery & Beadwork",
+            "bio": "Specialist in hand embroidery and glass beadwork who recounts Mayan cosmology and local fauna through every intricate stitch.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        },
+        {
+          "type": "artisan",
+          "settings": {
+            "name": "Rosa Chonay",
+            "location": "San Antonio Palopó, Sololá",
+            "technique": "Fine Brocade & Waist-Loom Weaving",
+            "bio": "Renowned textile artisan and co-founder of our women's weaving cooperative, championing financial independence and scholarships for indigenous girls.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

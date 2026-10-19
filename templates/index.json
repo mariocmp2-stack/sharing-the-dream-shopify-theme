@@ -1,0 +1,97 @@
+{
+  "sections": {
+    "hero_sharing_dream": {
+      "type": "hero-sharing-dream",
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "badge_text": "SHARING THE DREAM • 501(C)(3) FAIR TRADE",
+        "heading": "Authentic Mayan Handcrafts from Lake Atitlán",
+        "text": "Handmade jewelry, backstrap-loomed tote bags, and embroidered home decor. Every purchase provides living wages directly to over 120 indigenous weavers and funds youth scholarships in Guatemala.",
+        "primary_button_label": "Shop Handcrafted Pieces",
+        "primary_button_link": "shopify://collections/all",
+        "secondary_button_label": "Meet the Artisans",
+        "secondary_button_link": "#artisans-impact",
+        "caption": "Passing down generations of weaving knowledge in the Guatemalan highlands"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Artisan Crafts",
+        "heading_size": "h2",
+        "description": "Handcrafted by indigenous master weavers in Sololá & Santiago Atitlán.",
+        "show_description": true,
+        "description_style": "subtitle",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "swipe_on_mobile": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "artisans_impact": {
+      "type": "artisans-impact",
+      "blocks": {
+        "artisan_1": {
+          "type": "artisan",
+          "settings": {
+            "name": "Elena Quiej",
+            "location": "San Juan La Laguna, Sololá",
+            "technique": "Botanical Dye & Backstrap Loom",
+            "bio": "Elena is a master of plant-based natural dyes, weaving organic cotton threads on a traditional backstrap loom passed down through five generations.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        },
+        "artisan_2": {
+          "type": "artisan",
+          "settings": {
+            "name": "María Xuncax",
+            "location": "Santiago Atitlán, Sololá",
+            "technique": "Traditional Hand Embroidery & Beadwork",
+            "bio": "Specialist in hand embroidery and glass beadwork who recounts Mayan cosmology and local fauna through every intricate stitch.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        },
+        "artisan_3": {
+          "type": "artisan",
+          "settings": {
+            "name": "Rosa Chonay",
+            "location": "San Antonio Palopó, Sololá",
+            "technique": "Fine Brocade & Waist-Loom Weaving",
+            "bio": "Renowned textile artisan and co-founder of our women's weaving cooperative, championing financial independence and scholarships for indigenous girls.",
+            "story_link": "https://sharingthedream2.netlify.app/"
+          }
+        }
+      },
+      "block_order": [
+        "artisan_1",
+        "artisan_2",
+        "artisan_3"
+      ],
+      "settings": {
+        "bg_color": "#fcf9f5",
+        "eyebrow": "VERIFIED FAIR TRADE IMPACT",
+        "title": "Meet the Hands Behind the Weaving",
+        "subtitle": "Every thread woven and every bead strung carries the identity, pride, and generational knowledge of indigenous Maya women."
+      }
+    }
+  },
+  "order": [
+    "hero_sharing_dream",
+    "featured_collection",
+    "artisans_impact"
+  ]
+}
